@@ -2,11 +2,11 @@ module.exports = (sequelize,DataTypes)=>{
   const Activity = sequelize.define(
     'Activity',{
       id:{
-        type: DataType.INTEGER,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
       },
-      activity: DataTypes.STRING
+      task: DataTypes.STRING
     },{
       tableName: 'activities'
     });
