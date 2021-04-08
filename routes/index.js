@@ -4,12 +4,14 @@ var router = express.Router();
 const ToDoListController = require('../controllers/ToDoListController');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index');
-});
+router.get('/', ToDoListController.index);
 
-router.get("/create", ToDoListController.create);
+router.post("/create", ToDoListController.create);
 
+router.get("/edit/:id", ToDoListController.edit);
 
+router.post("/update/:id", ToDoListController.updated);
+
+router.get("/delete/:id", ToDoListController.delete);
 
 module.exports = router;
